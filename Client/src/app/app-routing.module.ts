@@ -20,13 +20,33 @@ import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 
+// Association
+import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
+import { MysideComponent } from "./components/myside/myside.component";
+import { BloodListVComponent } from "./_Association/blood/blood-list-v/blood-list-v.component"
+
 const routes: Routes = [
   // admin views
+  { path: "dash", 
+    component: MysideComponent,
+    children: [
+      { path: "add_blood", component: AddBloodDonationComponent },
+      { path: "blood_list", component: BloodListVComponent },
+      { path: "dashboard", component: DashboardComponent },
+      { path: "add_blood", component: AddBloodDonationComponent },
+      { path: "settings", component: SettingsComponent },
+      { path: "tables", component: TablesComponent },
+      { path: "maps", component: MapsComponent },
+    ]
+  },
+  { path: "dashboard", component: DashboardComponent },
   {
     path: "admin",
     component: AdminComponent,
     children: [
+      { path: "dash", component: MysideComponent },
       { path: "dashboard", component: DashboardComponent },
+      { path: "add_blood", component: AddBloodDonationComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },

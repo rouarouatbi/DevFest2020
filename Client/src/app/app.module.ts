@@ -54,6 +54,12 @@ import { ListeEventComponent } from './_Association/event/liste-event/liste-even
 import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
 import { AddNeedComponent } from './_Association/needs/add-need/add-need.component';
 import { ListNeedComponent } from './_Association/needs/list-need/list-need.component';
+import { AddBloodDonationComponent } from './_Association/blood/add-blood-donation/add-blood-donation.component';
+import { MysideComponent } from './components/myside/myside.component';
+import { MyheaderComponent } from './components/headers/myheader/myheader.component';
+import { FormComponent } from './_Association/blood/form/form.component';
+import { BloodListVComponent } from './_Association/blood/blood-list-v/blood-list-v.component';
+import { BlistComponent } from './_Association/blood/blist/blist.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +104,12 @@ import { ListNeedComponent } from './_Association/needs/list-need/list-need.comp
     ListBloodComponent,
     AddNeedComponent,
     ListNeedComponent,
+    AddBloodDonationComponent,
+    MysideComponent,
+    MyheaderComponent,
+    FormComponent,
+    BloodListVComponent,
+    BlistComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
