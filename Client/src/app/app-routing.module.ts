@@ -21,6 +21,7 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { WelcomeComponent } from './_Public/welcome/welcome.component';
 import { AddEventComponent } from "./_Association/event/add-event/add-event.component";
+import { ListeEventComponent} from "./_Association/event/liste-event/liste-event.component";
 
 // Association
 import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "add_blood", component: AddBloodDonationComponent },
       { path: "add_event", component: AddEventComponent },
+      { path: "list_event", component: ListeEventComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
