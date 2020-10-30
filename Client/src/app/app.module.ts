@@ -52,6 +52,7 @@ import { AboutusComponent } from './_Public/aboutus/aboutus.component';
 import { AddEventComponent } from './_Association/event/add-event/add-event.component';
 import { ListeEventComponent } from './_Association/event/liste-event/liste-event.component';
 import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
+import { FooterWelcomeComponent } from './components/footers/footer-welcome/footer-welcome.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.com
     AddEventComponent,
     ListeEventComponent,
     ListBloodComponent,
-  ],
+    FooterWelcomeComponent  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

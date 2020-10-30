@@ -19,8 +19,12 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { WelcomeComponent } from './_Public/welcome/welcome.component';
 
 const routes: Routes = [
+
+  {path:"",component:WelcomeComponent},
+  {path:"login",component:LoginComponent},
   // admin views
   {
     path: "admin",
