@@ -52,6 +52,8 @@ import { AboutusComponent } from './_Public/aboutus/aboutus.component';
 import { AddEventComponent } from './_Association/event/add-event/add-event.component';
 import { ListeEventComponent } from './_Association/event/liste-event/liste-event.component';
 import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
+import { AddNeedComponent } from './_Association/needs/add-need/add-need.component';
+import { ListNeedComponent } from './_Association/needs/list-need/list-need.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,8 @@ import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.com
     AddEventComponent,
     ListeEventComponent,
     ListBloodComponent,
+    AddNeedComponent,
+    ListNeedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
