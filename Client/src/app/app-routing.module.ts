@@ -21,8 +21,12 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { AddEventComponent } from "./_Association/event/add-event/add-event.component";
 import { ListeEventComponent} from "./_Association/event/liste-event/liste-event.component";
+import { WelcomeComponent } from './_Public/welcome/welcome.component';
 
 const routes: Routes = [
+
+  {path:"",component:WelcomeComponent},
+  {path:"login",component:LoginComponent},
   // admin views
   {
     path: "admin",
