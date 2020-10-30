@@ -11,5 +11,8 @@ export class AddEventComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  create(){
+    
+  }
 
 }
