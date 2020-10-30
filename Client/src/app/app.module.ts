@@ -47,6 +47,11 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
+import { WelcomeComponent } from './_Public/welcome/welcome.component';
+import { AboutusComponent } from './_Public/aboutus/aboutus.component';
+import { AddEventComponent } from './_Association/event/add-event/add-event.component';
+import { ListeEventComponent } from './_Association/event/liste-event/liste-event.component';
+import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +89,11 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    WelcomeComponent,
+    AboutusComponent,
+    AddEventComponent,
+    ListeEventComponent,
+    ListBloodComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
