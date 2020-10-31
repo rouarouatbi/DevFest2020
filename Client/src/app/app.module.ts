@@ -52,6 +52,7 @@ import { AboutusComponent } from './_Public/aboutus/aboutus.component';
 import { AddEventComponent } from './_Association/event/add-event/add-event.component';
 import { ListeEventComponent } from './_Association/event/liste-event/liste-event.component';
 import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
+import { FooterWelcomeComponent } from './components/footers/footer-welcome/footer-welcome.component';
 import { AddNeedComponent } from './_Association/needs/add-need/add-need.component';
 import { ListNeedComponent } from './_Association/needs/list-need/list-need.component';
 import { AddBloodDonationComponent } from './_Association/blood/add-blood-donation/add-blood-donation.component';
@@ -60,12 +61,14 @@ import { MyheaderComponent } from './components/headers/myheader/myheader.compon
 import { FormComponent } from './_Association/blood/form/form.component';
 import { BloodListVComponent } from './_Association/blood/blood-list-v/blood-list-v.component';
 import { BlistComponent } from './_Association/blood/blist/blist.component';
-import { FooterWelcomeComponent } from './components/footers/footer-welcome/footer-welcome.component';
 import { NformComponent } from './_Association/needs/nform/nform.component';
 import { NlistComponent } from './_Association/needs/nlist/nlist.component';
 import { UsersideComponent } from './components/userside/userside.component';
 import { UserComponent } from './layouts/user/user.component';
 import { Profile2Component } from './_Volunteer/profile/profile.component';
+import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
+import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,6 +111,7 @@ import { Profile2Component } from './_Volunteer/profile/profile.component';
     AddEventComponent,
     ListeEventComponent,
     ListBloodComponent,
+    FooterWelcomeComponent  ,
     AddNeedComponent,
     ListNeedComponent,
     AddBloodDonationComponent,
@@ -120,9 +124,12 @@ import { Profile2Component } from './_Volunteer/profile/profile.component';
     NformComponent,
     NlistComponent,
     UsersideComponent,
-    UserComponent
+    UserComponent,
+    AccueilVComponent,
+    CardVolunteerComponent,
   ],
      
+    
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
