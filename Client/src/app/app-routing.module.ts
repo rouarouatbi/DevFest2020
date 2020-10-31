@@ -27,19 +27,24 @@ import { ListeEventComponent} from "./_Association/event/liste-event/liste-event
 import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
 import { MysideComponent } from "./components/myside/myside.component";
 import { BloodListVComponent } from "./_Association/blood/blood-list-v/blood-list-v.component"
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CardBarChartComponent } from './components/cards/card-bar-chart/card-bar-chart.component';
+import { CardLineChartComponent } from './components/cards/card-line-chart/card-line-chart.component';
+import { CardPageVisitsComponent } from './components/cards/card-page-visits/card-page-visits.component';
+import { CardProfileComponent } from './components/cards/card-profile/card-profile.component';
+import { CardSocialTrafficComponent } from './components/cards/card-social-traffic/card-social-traffic.component';
+import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 
 const routes: Routes = [
 
   {path:"",component:WelcomeComponent},
-  {path:"login",component:LoginComponent},
+  {path:"volontaire",component:AccueilVComponent},
   // admin views
   { path: "dash", 
     component: MysideComponent,
     children: [
       { path: "add_blood", component: AddBloodDonationComponent },
       { path: "blood_list", component: BloodListVComponent },
-      { path: "dashboard", component: DashboardComponent },
-      { path: "add_blood", component: AddBloodDonationComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },

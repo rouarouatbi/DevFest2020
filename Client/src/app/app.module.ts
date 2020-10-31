@@ -61,6 +61,8 @@ import { MyheaderComponent } from './components/headers/myheader/myheader.compon
 import { FormComponent } from './_Association/blood/form/form.component';
 import { BloodListVComponent } from './_Association/blood/blood-list-v/blood-list-v.component';
 import { BlistComponent } from './_Association/blood/blist/blist.component';
+import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
+import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +114,8 @@ import { BlistComponent } from './_Association/blood/blist/blist.component';
     FormComponent,
     BloodListVComponent,
     BlistComponent,
+    AccueilVComponent,
+    CardVolunteerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
