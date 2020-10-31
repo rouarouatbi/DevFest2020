@@ -15,6 +15,8 @@ import { TablesComponent } from "./views/admin/tables/tables.component";
 import { LoginComponent } from "./views/auth/login/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
+
+
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
@@ -23,21 +25,42 @@ import { AddEventComponent } from "./_Association/event/add-event/add-event.comp
 import { ListeEventComponent} from "./_Association/event/liste-event/liste-event.component";
 import { WelcomeComponent } from './_Public/welcome/welcome.component';
 
+// Association
+import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
+import { MysideComponent } from "./components/myside/myside.component";
+import { BloodListVComponent } from "./_Association/blood/blood-list-v/blood-list-v.component"
+
 const routes: Routes = [
 
   {path:"",component:WelcomeComponent},
   {path:"login",component:LoginComponent},
   // admin views
+  { path: "dash", 
+    component: MysideComponent,
+    children: [
+      { path: "add_blood", component: AddBloodDonationComponent },
+      { path: "blood_list", component: BloodListVComponent },
+      { path: "dashboard", component: DashboardComponent },
+      { path: "add_blood", component: AddBloodDonationComponent },
+      { path: "settings", component: SettingsComponent },
+      { path: "tables", component: TablesComponent },
+      { path: "maps", component: MapsComponent },
+    ]
+  },
+  { path: "dashboard", component: DashboardComponent },
   {
     path: "admin",
     component: AdminComponent,
     children: [
+      { path: "dash", component: MysideComponent },
       { path: "dashboard", component: DashboardComponent },
+      { path: "add_blood", component: AddBloodDonationComponent },
       { path: "add_event", component: AddEventComponent },
       { path: "list_event", component: ListeEventComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+      
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -48,6 +71,7 @@ const routes: Routes = [
     children: [
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent },
+     
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
