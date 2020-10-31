@@ -86,7 +86,7 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/admin/dashboard']"
+            [routerLink]="['/user/profile']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminDashboard="routerLinkActive"
@@ -102,35 +102,13 @@
                 adminDashboard.isActive ? 'opacity-75' : 'text-gray-400'
               "
             ></i>
-            لوحة الإعدادات
+            الملف الشخصي
           </a>
         </li>
 
-        
         <li class="items-center">
           <a
-            [routerLink]="['/dash/add_blood']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminSettings="routerLinkActive"
-            [ngClass]="
-              adminSettings.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-gray-800 hover:text-gray-600'
-            "
-          >
-            <i
-              class="fas fa-burn mr-2 text-sm"
-              [ngClass]="
-                adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
-              "
-            ></i>
-            طلب تبرعات دم
-          </a>
-        </li>
-        <li class="items-center">
-          <a
-            [routerLink]="['/dash/blood_list']"
+            [routerLink]="['/admin/settings']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -146,12 +124,34 @@
                 adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
               "
             ></i>
-            قائمة التبرعات بالدم
+            حاجيات الدم
           </a>
         </li>
         <li class="items-center">
           <a
-            [routerLink]="['/dash/add_event']"
+            [routerLink]="['/admin/add_blood']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-gray-800 hover:text-gray-600'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
+              "
+            ></i>
+            طلب تبرعات دم
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminTables="routerLinkActive"
@@ -165,13 +165,13 @@
               class="fas fa-table mr-2 text-sm"
               [ngClass]="adminTables.isActive ? 'opacity-75' : 'text-gray-400'"
             ></i>
-            إضافة حدث
+            Tables
           </a>
         </li>
 
         <li class="items-center">
           <a
-            [routerLink]="['/dash/event_list']"
+            [routerLink]="['/admin/maps']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminMaps="routerLinkActive"
@@ -185,7 +185,7 @@
               class="fas fa-map-marked mr-2 text-sm"
               [ngClass]="adminMaps.isActive ? 'opacity-75' : 'text-gray-400'"
             ></i>
-            قائمة التظاهرات
+            MapsRR
           </a>
         </li>
       </ul>
@@ -196,28 +196,28 @@
       <h6
         class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        المستشفيات
+        Auth Layout Pages
       </h6>
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
           <a
-            [routerLink]="['/dash/add_need']"
+            [routerLink]="['/auth/login']"
             class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-hand-holding-medical text-gray-400 mr-2 text-sm"></i>
-            طلب مساعدات 
+            <i class="fas fa-fingerprint text-gray-400 mr-2 text-sm"></i>
+            Login
           </a>
         </li>
 
         <li class="items-center">
           <a
-            [routerLink]="['/dash/need_list']"
+            [routerLink]="['/auth/register']"
             class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-clipboard-list text-gray-400 mr-2 text-sm"></i>
-            قائمة المساعدات
+            Register
           </a>
         </li>
       </ul>
@@ -355,4 +355,3 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>

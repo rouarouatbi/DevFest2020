@@ -25,19 +25,44 @@ import { AddEventComponent } from "./_Association/event/add-event/add-event.comp
 import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
 import { MysideComponent } from "./components/myside/myside.component";
 import { BloodListVComponent } from "./_Association/blood/blood-list-v/blood-list-v.component"
+import { WelcomeComponent } from './_Public/welcome/welcome.component';
+import { ListeEventComponent } from "./_Association/event/liste-event/liste-event.component"
+import { AddNeedComponent } from "./_Association/needs/add-need/add-need.component";
+import { ListNeedComponent } from "./_Association/needs/list-need/list-need.component";
+
+//Volunteer
+import { ListBloodComponent } from "./_Volunteer/blood/list-blood/list-blood.component";
+import { Profile2Component } from "./_Volunteer/profile/profile.component";
 
 const routes: Routes = [
-  // admin views
+
+  {path:"",component:WelcomeComponent},
+  {path:"login",component:LoginComponent},
+  // Association views
   { path: "dash", 
     component: MysideComponent,
     children: [
       { path: "add_blood", component: AddBloodDonationComponent },
       { path: "blood_list", component: BloodListVComponent },
+      { path: "add_event", component: AddEventComponent },
+      { path: "event_list", component: ListeEventComponent },
+      { path: "add_need", component: AddNeedComponent },
+      { path: "need_list", component: ListNeedComponent },
       { path: "dashboard", component: DashboardComponent },
       { path: "add_blood", component: AddBloodDonationComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+    ]
+  },
+
+  // Volunteer views
+  { path: "user", 
+    component: MysideComponent,
+    children: [
+      { path: "blood_list", component: ListBloodComponent },
+      { path: "profile", component: Profile2Component },
+      
     ]
   },
   { path: "dashboard", component: DashboardComponent },
