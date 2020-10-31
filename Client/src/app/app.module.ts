@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+//auth
 
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
@@ -14,9 +15,18 @@ import { MapsComponent } from "./views/admin/maps/maps.component";
 import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
-// auth views
-import { LoginComponent } from "./views/auth/login/login.component";
-import { RegisterComponent } from "./views/auth/register/register.component";
+//utils
+import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormGroup, FormControl } from '@angular/forms'
+
+
+// auth 
+import { LoginComponent } from "./_Association/auth/login/login.component";
+import { RegisterComponent } from "./_Association/auth/register/register.component";
+import { JwtInterceptor } from './_helper/jwt.interceptor';
+import { ErrorInterceptor } from './_helper/error.interceptor';
+import { AuthGuard } from './_helper/auth.guard'; 
 
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
@@ -69,6 +79,7 @@ import { Profile2Component } from './_Volunteer/profile/profile.component';
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
 import { DetailsComponent } from './_Volunteer/blood/details/details.component';
+
 
 @NgModule({
   declarations: [
@@ -129,11 +140,24 @@ import { DetailsComponent } from './_Volunteer/blood/details/details.component';
     AccueilVComponent,
     CardVolunteerComponent,
     DetailsComponent,
+
   ],
      
     
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule,
+    HttpClientModule,
+    // ReactiveFormsModule,
+     FormsModule,
+     AppRoutingModule,
+     ReactiveFormsModule,],
+  providers: [ 
+    AuthGuard,
+    JwtInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

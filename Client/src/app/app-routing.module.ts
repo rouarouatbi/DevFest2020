@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule,PreloadAllModules } from "@angular/router";
+
 
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
@@ -12,8 +13,9 @@ import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
 // auth views
-import { LoginComponent } from "./views/auth/login/login.component";
-import { RegisterComponent } from "./views/auth/register/register.component";
+import { LoginComponent } from "./_Association/auth/login/login.component";
+import { RegisterComponent } from "./_Association/auth/register/register.component";
+import { AuthGuard } from './_helper/auth.guard';
 
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
@@ -57,7 +59,8 @@ const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
-    ]
+    ],
+    canActivate : [AuthGuard]
   },
 
   // Volunteer views
