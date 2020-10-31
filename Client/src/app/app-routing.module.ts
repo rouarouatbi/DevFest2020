@@ -40,6 +40,8 @@ import { CardPageVisitsComponent } from './components/cards/card-page-visits/car
 import { CardProfileComponent } from './components/cards/card-profile/card-profile.component';
 import { CardSocialTrafficComponent } from './components/cards/card-social-traffic/card-social-traffic.component';
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
+import { UsersideComponent } from './components/userside/userside.component';
+import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
 
 const routes: Routes = [
 
@@ -72,7 +74,7 @@ const routes: Routes = [
       { path: "blood_list", component: ListBloodComponent },
       { path: "profile", component: Profile2Component },
       { path:"home",component:AccueilVComponent},
-      
+      {path:"profile_as",component:ProfileAsComponent}
       
     ]
   },

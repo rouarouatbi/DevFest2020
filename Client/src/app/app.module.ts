@@ -68,6 +68,8 @@ import { UserComponent } from './layouts/user/user.component';
 import { Profile2Component } from './_Volunteer/profile/profile.component';
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
+import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
+import { CardProfComponent } from './components/cards/card-prof/card-prof.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +129,8 @@ import { CardVolunteerComponent } from './components/cards/card-volunteer/card-v
     UserComponent,
     AccueilVComponent,
     CardVolunteerComponent,
+    ProfileAsComponent,
+    CardProfComponent,
   ],
      
     
