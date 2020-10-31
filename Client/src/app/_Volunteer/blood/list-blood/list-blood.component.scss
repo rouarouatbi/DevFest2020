@@ -6,7 +6,10 @@ $colorMain : #3498db;
 $colorMainDarker : #2980b9;
 $colorSecundary : #9b59b6;
 $colorSecundaryDarker : #9b59b6;
-
+.dd{
+	margin-left: 30%;
+	margin-bottom: -10%;
+}
 html, body {
 	position: relative;
 	height: 100%;
@@ -240,10 +243,13 @@ body {
 	background: linear-gradient(135deg, $colorMainDarker 0%,$colorSecundaryDarker 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
 }
-
+.ff{
+	margin-right: -0.5% !important;
+}
 .container {
 	position: relative;
 	width: 100%;
+	
 	max-width: $maxWidth;
 	min-height: 100%;
 	margin: 0px auto;

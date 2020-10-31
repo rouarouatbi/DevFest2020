@@ -108,7 +108,7 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/settings']"
+            [routerLink]="['/user/blood_list']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -124,7 +124,7 @@
                 adminSettings.isActive ? 'opacity-75' : 'text-gray-400'
               "
             ></i>
-            حاجيات الدم
+            التبرع الدم
           </a>
         </li>
         <li class="items-center">
@@ -203,11 +203,11 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
           <a
-            [routerLink]="['/auth/login']"
+            [routerLink]="['/user/home']"
             class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-fingerprint text-gray-400 mr-2 text-sm"></i>
-            Login
+            مواعيد التظاهرات
           </a>
         </li>
 
@@ -355,3 +355,4 @@
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>

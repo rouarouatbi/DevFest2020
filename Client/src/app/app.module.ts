@@ -68,6 +68,7 @@ import { UserComponent } from './layouts/user/user.component';
 import { Profile2Component } from './_Volunteer/profile/profile.component';
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
+import { DetailsComponent } from './_Volunteer/blood/details/details.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { CardVolunteerComponent } from './components/cards/card-volunteer/card-v
     UserComponent,
     AccueilVComponent,
     CardVolunteerComponent,
+    DetailsComponent,
   ],
      
     

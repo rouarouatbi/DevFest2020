@@ -33,14 +33,9 @@ import { ListNeedComponent } from "./_Association/needs/list-need/list-need.comp
 //Volunteer
 import { ListBloodComponent } from "./_Volunteer/blood/list-blood/list-blood.component";
 import { Profile2Component } from "./_Volunteer/profile/profile.component";
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { CardBarChartComponent } from './components/cards/card-bar-chart/card-bar-chart.component';
-import { CardLineChartComponent } from './components/cards/card-line-chart/card-line-chart.component';
-import { CardPageVisitsComponent } from './components/cards/card-page-visits/card-page-visits.component';
-import { CardProfileComponent } from './components/cards/card-profile/card-profile.component';
-import { CardSocialTrafficComponent } from './components/cards/card-social-traffic/card-social-traffic.component';
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
-
+import { UsersideComponent } from "./components/userside/userside.component";
+import { DetailsComponent } from "./_Volunteer/blood/details/details.component";
 const routes: Routes = [
 
   {path:"",component:WelcomeComponent},
@@ -67,11 +62,12 @@ const routes: Routes = [
 
   // Volunteer views
   { path: "user", 
-    component: MysideComponent,
+    component: UsersideComponent,
     children: [
       { path: "blood_list", component: ListBloodComponent },
       { path: "profile", component: Profile2Component },
       { path:"home",component:AccueilVComponent},
+      { path:"rdv",component:DetailsComponent},
       
     ]
   },
