@@ -73,6 +73,7 @@ const routes: Routes = [
       { path: "profile", component: Profile2Component },
       { path:"home",component:AccueilVComponent},
       
+      
     ]
   },
   { path: "dashboard", component: DashboardComponent },
