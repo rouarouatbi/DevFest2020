@@ -80,6 +80,8 @@ import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
 import { DetailsComponent } from './_Volunteer/blood/details/details.component';
 
+import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
+import { CardProfComponent } from './components/cards/card-prof/card-prof.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +142,8 @@ import { DetailsComponent } from './_Volunteer/blood/details/details.component';
     AccueilVComponent,
     CardVolunteerComponent,
     DetailsComponent,
-
+    ProfileAsComponent,
+    CardProfComponent,
   ],
      
     

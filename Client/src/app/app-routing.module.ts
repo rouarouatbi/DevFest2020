@@ -38,6 +38,8 @@ import { Profile2Component } from "./_Volunteer/profile/profile.component";
 import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { UsersideComponent } from "./components/userside/userside.component";
 import { DetailsComponent } from "./_Volunteer/blood/details/details.component";
+import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
+
 const routes: Routes = [
 
   {path:"",component:WelcomeComponent},
@@ -71,6 +73,7 @@ const routes: Routes = [
       { path: "profile", component: Profile2Component },
       { path:"home",component:AccueilVComponent},
       { path:"rdv",component:DetailsComponent},
+      {path:"profile_as",component:ProfileAsComponent}
       
     ]
   },
