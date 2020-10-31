@@ -62,6 +62,15 @@ import { FormComponent } from './_Association/blood/form/form.component';
 import { BloodListVComponent } from './_Association/blood/blood-list-v/blood-list-v.component';
 import { BlistComponent } from './_Association/blood/blist/blist.component';
 
+import { NformComponent } from './_Association/needs/nform/nform.component';
+import { NlistComponent } from './_Association/needs/nlist/nlist.component';
+import { UsersideComponent } from './components/userside/userside.component';
+import { UserComponent } from './layouts/user/user.component';
+import { Profile2Component } from './_Volunteer/profile/profile.component';
+import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
+import { CardVolunteerComponent } from './components/cards/card-volunteer/card-volunteer.component';
+import { OtherDonationListComponent } from './_Volunteer/other-donation-list/other-donation-list.component';
+import { CardOtherDonationComponent } from './components/cards/card-other-donation/card-other-donation.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +98,7 @@ import { BlistComponent } from './_Association/blood/blist/blist.component';
     AuthNavbarComponent,
     AdminNavbarComponent,
     IndexNavbarComponent,
+    Profile2Component,
     AdminComponent,
     AuthComponent,
     MapsComponent,
@@ -104,6 +114,7 @@ import { BlistComponent } from './_Association/blood/blist/blist.component';
     AddEventComponent,
     ListeEventComponent,
     ListBloodComponent,
+    FooterWelcomeComponent  ,
     AddNeedComponent,
     ListNeedComponent,
     FooterWelcomeComponent ,
@@ -114,9 +125,17 @@ import { BlistComponent } from './_Association/blood/blist/blist.component';
     FormComponent,
     BloodListVComponent,
     BlistComponent,
-    
-  
+    NformComponent,
+    NlistComponent,
+    UsersideComponent,
+    UserComponent,
+    AccueilVComponent,
+    CardVolunteerComponent,
+    OtherDonationListComponent,
+    CardOtherDonationComponent,
   ],
+     
+    
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
