@@ -62,15 +62,16 @@ import { AboutusComponent } from './_Public/aboutus/aboutus.component';
 import { AddEventComponent } from './_Association/event/add-event/add-event.component';
 import { ListeEventComponent } from './_Association/event/liste-event/liste-event.component';
 import { ListBloodComponent } from './_Volunteer/blood/list-blood/list-blood.component';
-import { FooterWelcomeComponent } from './components/footers/footer-welcome/footer-welcome.component';
 import { AddNeedComponent } from './_Association/needs/add-need/add-need.component';
 import { ListNeedComponent } from './_Association/needs/list-need/list-need.component';
+import { FooterWelcomeComponent } from './components/footers/footer-welcome/footer-welcome.component';
 import { AddBloodDonationComponent } from './_Association/blood/add-blood-donation/add-blood-donation.component';
 import { MysideComponent } from './components/myside/myside.component';
 import { MyheaderComponent } from './components/headers/myheader/myheader.component';
 import { FormComponent } from './_Association/blood/form/form.component';
 import { BloodListVComponent } from './_Association/blood/blood-list-v/blood-list-v.component';
 import { BlistComponent } from './_Association/blood/blist/blist.component';
+
 import { NformComponent } from './_Association/needs/nform/nform.component';
 import { NlistComponent } from './_Association/needs/nlist/nlist.component';
 import { UsersideComponent } from './components/userside/userside.component';
@@ -82,6 +83,9 @@ import { DetailsComponent } from './_Volunteer/blood/details/details.component';
 
 import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
 import { CardProfComponent } from './components/cards/card-prof/card-prof.component';
+import { OtherDonationListComponent } from './_Volunteer/other-donation-list/other-donation-list.component';
+import { CardOtherDonationComponent } from './components/cards/card-other-donation/card-other-donation.component';
+import { HelpComponent } from './_Volunteer/help/help.component';
 
 @NgModule({
   declarations: [
@@ -128,13 +132,14 @@ import { CardProfComponent } from './components/cards/card-prof/card-prof.compon
     FooterWelcomeComponent  ,
     AddNeedComponent,
     ListNeedComponent,
+    FooterWelcomeComponent ,
+
     AddBloodDonationComponent,
     MysideComponent,
     MyheaderComponent,
     FormComponent,
     BloodListVComponent,
     BlistComponent,
-    FooterWelcomeComponent,
     NformComponent,
     NlistComponent,
     UsersideComponent,
@@ -144,6 +149,9 @@ import { CardProfComponent } from './components/cards/card-prof/card-prof.compon
     DetailsComponent,
     ProfileAsComponent,
     CardProfComponent,
+    OtherDonationListComponent,
+    CardOtherDonationComponent,
+    HelpComponent,
   ],
      
     

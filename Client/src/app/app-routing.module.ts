@@ -17,12 +17,16 @@ import { LoginComponent } from "./_Association/auth/login/login.component";
 import { RegisterComponent } from "./_Association/auth/register/register.component";
 import { AuthGuard } from './_helper/auth.guard';
 
+
+
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
-import { WelcomeComponent } from './_Public/welcome/welcome.component';
 import { AddEventComponent } from "./_Association/event/add-event/add-event.component";
+
+import { WelcomeComponent } from './_Public/welcome/welcome.component';
+
 
 // Association
 import { AddBloodDonationComponent } from "./_Association/blood/add-blood-donation/add-blood-donation.component"
@@ -39,6 +43,8 @@ import { AccueilVComponent } from './_Volunteer/accueil-v/accueil-v.component';
 import { UsersideComponent } from "./components/userside/userside.component";
 import { DetailsComponent } from "./_Volunteer/blood/details/details.component";
 import { ProfileAsComponent } from './_Volunteer/profile-as/profile-as.component';
+import { HelpComponent } from "./_Volunteer/help/help.component"
+import { OtherDonationListComponent} from './_Volunteer/other-donation-list/other-donation-list.component';
 
 const routes: Routes = [
 
@@ -71,9 +77,11 @@ const routes: Routes = [
     children: [
       { path: "blood_list", component: ListBloodComponent },
       { path: "profile", component: Profile2Component },
+      { path :"other_donation_list", component: OtherDonationListComponent},
       { path:"home",component:AccueilVComponent},
       { path:"rdv",component:DetailsComponent},
-      {path:"profile_as",component:ProfileAsComponent}
+      { path:"help",component:HelpComponent},
+      { path:"profile_as",component:ProfileAsComponent}
       
     ]
   },
@@ -85,11 +93,10 @@ const routes: Routes = [
       { path: "dash", component: MysideComponent },
       { path: "dashboard", component: DashboardComponent },
       { path: "add_blood", component: AddBloodDonationComponent },
-      { path: "add_event", component: AddEventComponent },
-      { path: "list_event", component: ListeEventComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+      
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -100,6 +107,7 @@ const routes: Routes = [
     children: [
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent },
+     
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
