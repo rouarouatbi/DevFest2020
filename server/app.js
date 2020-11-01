@@ -1,7 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-const cors = require('cors');
+var cors = require('cors');
+
+
 var logger = require('morgan');
 var config = require('./config');
 var passport = require('passport');
@@ -13,13 +15,11 @@ const Contact = require('./models/contact');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productRouter = require('./routes/products');
 var galleryRouter = require('./routes/galleries');
-var technicRouter = require('./routes/technics');
-var contactRouter = require('./routes/contacts');
-var deviRouter = require('./routes/devis');
-var serviceRouter = require('./routes/services');
-var categoryRouter = require('./routes/categories');
+var BloodRouter = require('./routes/bloods');
+var EventRouter = require('./routes/events');
+var NeedRouter = require('./routes/needs');
+
 const mongoose = require('mongoose');
 const url = config.mongoUrl;
 const connect = mongoose.connect(url);
@@ -32,6 +32,8 @@ connect.then((db)=>{
 
 var app = express();
 
+
+app.use(cors({origin:true,credentials: true}));
 
 
 //app.use(cors()) 
@@ -56,13 +58,12 @@ app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('',serviceRouter);
-app.use('',productRouter);
-app.use('',categoryRouter);
-app.use('',technicRouter);
+
 app.use('',galleryRouter)
-app.use('',contactRouter);
-app.use('',deviRouter);
+app.use('',BloodRouter);
+app.use('',NeedRouter);
+app.use('',EventRouter);
+
 
 
 

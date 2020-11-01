@@ -1,29 +1,44 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 var cors = require('./cors');
+const mongoose = require('mongoose');
 var authenticate = require('../authenticate');
-const Devis = require('../models/devi');
+const Need = require('../models/need');
 
-const deviRouter = express.Router();
-deviRouter.use(bodyParser.json());
+const NeedRouter = express.Router();
+NeedRouter.use(bodyParser.json());
 
-deviRouter.route('/api/devis')
-.get(cors.cors,authenticate.verifyUser,(req,res,next)=>{
-    Devis.find({})
-    .then((dev)=>{
+
+
+
+NeedRouter.route('/blood')
+.get(cors.cors,(req,res,next)=>{
+    Need.find({})
+    .then((blood)=>{
         res.status.code=200;
         res.setHeader('Content-Type','application/json');
-        res.json(dev);
+        res.json(blood);
     },(err)=>next(err))
     .catch((err)=>next(err));
 })
-deviRouter.route('/devis')
-.options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
-.post(cors.corsWithOptions,(req,res,next)=>{
-    Devis.create(req.body)
+.post(cors.cors,authenticate.verifyUser,(req,res,next)=>{
+    Blood.create(req.body)
     .then((cont)=>{
-        console.log('a new devis has been recorded',cont);
+        console.log('a new demand of help has been recorded',cont);
+        res.status = 200;
+        res.setHeader('Content-Type','application/json');
+        res.json({success:'success!'});
+    },(err)=>next(err))
+    .catch((err)=>next(err));
+})
+
+
+NeedRouter.route('api/need')
+.options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
+.post(cors.cors,authenticate.verifyUser,(req,res,next)=>{
+    Need.create(req.body)
+    .then((cont)=>{
+        console.log('a new demand of help has been recorded',cont);
         res.status = 200;
         res.setHeader('Content-Type','application/json');
         res.json({success:'success!'});
@@ -32,22 +47,14 @@ deviRouter.route('/devis')
 })
 .put(cors.corsWithOptions,(req,res,next)=>{
     res.statusCode = 403;
-    res.end('PUT operation not supported on /DEVS');
-})
-.delete(cors.corsWithOptions,authenticate.verifyUser,(req,res,next)=>{
-    Devis.remove({})
-    .then((resp)=>{
-        res.status.Code=200;
-        res.setHeader('Content-Type','application/json');
-        res.json(resp);
-    },(err)=>next(err))
-    .catch((err)=>next(err));
+    res.end('PUT operation not supported on /dishes');
 });
-/*
-deviRouter.route('/:id_mess')
+
+
+NeedRouter.route('/api/need/:need_id')
 .options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
-.get(cors.cors,authenticate.verifyUser,(req,res,next)=>{
-    Devis.findById(req.params.id_mess)
+.get(cors.cors,(req,res,next)=>{
+    Need.findById(req.params.blood_id)
     .then((cont)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json');
@@ -57,14 +64,14 @@ deviRouter.route('/:id_mess')
 })
 .post(cors.corsWithOptions,(req,res,next)=>{
     res.statusCode = 403;
-    res.end('POST operation not supported on devis/id');
+    res.end('POST operation not supported on Needs/id');
 })
 .put(cors.corsWithOptions,(req,res,next)=>{
     res.statusCode = 403;
-    res.end('PUT operation not supported on /devis/:id');
+    res.end('PUT operation not supported on /Neeeds/:id');
 })
 .delete(cors.corsWithOptions,authenticate.verifyUser,(req,res,next)=>{
-    Devis.findByIdAndRemove(req.params.id_mess)
+    Need.findByIdAndRemove(req.params.id_mess)
     .then((resp)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json');
@@ -72,6 +79,4 @@ deviRouter.route('/:id_mess')
     },(err)=>next(err))
     .catch((err)=>next(err));
 });
-*/
-
-module.exports = deviRouter;
+module.exports =NeedRouter;

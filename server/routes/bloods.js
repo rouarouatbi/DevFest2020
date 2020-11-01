@@ -3,27 +3,52 @@ const bodyParser = require('body-parser');
 var cors = require('./cors');
 const mongoose = require('mongoose');
 var authenticate = require('../authenticate');
-const Contacts = require('../models/contact');
+const Blood = require('../models/blood');
 
-const contactRouter = express.Router();
-contactRouter.use(bodyParser.json());
+const BloodRouter = express.Router();
+BloodRouter.use(bodyParser.json());
 
-contactRouter.route('/api/contact')
-.get(cors.cors,authenticate.verifyUser,(req,res,next)=>{
-    Contacts.find({})
-    .then((contacts)=>{
+var whitelist = [
+    'http://0.0.0.0:3000', 'http://127.0.0.1:4200',
+];
+var corsOptions = {
+    origin: function(origin, callback){
+        var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+        callback(null, originIsWhitelisted);
+    },
+    credentials: true
+};
+app.use(cors(corsOptions));
+
+
+BloodRouter.route('/blood')
+.get(cors.cors,(req,res,next)=>{
+    Blood.find({})
+    .then((blood)=>{
         res.status.code=200;
         res.setHeader('Content-Type','application/json');
-        res.json(contacts);
+        res.json(blood);
     },(err)=>next(err))
     .catch((err)=>next(err));
 })
-contactRouter.route('/contact')
-.options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
-.post(cors.corsWithOptions,(req,res,next)=>{
-    Contacts.create(req.body)
+.post(cors.cors,authenticate.verifyUser,(req,res,next)=>{
+    Blood.create(req.body)
     .then((cont)=>{
-        console.log('a new message has been recorded',cont);
+        console.log('a new demand of blood has been recorded',cont);
+        res.status = 200;
+        res.setHeader('Content-Type','application/json');
+        res.json({success:'success!'});
+    },(err)=>next(err))
+    .catch((err)=>next(err));
+})
+
+
+BloodRouter.route('/api/blood')
+.options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
+.post(cors.cors,authenticate.verifyUser,(req,res,next)=>{
+    Blood.create(req.body)
+    .then((cont)=>{
+        console.log('a new demand of blood has been recorded',cont);
         res.status = 200;
         res.setHeader('Content-Type','application/json');
         res.json({success:'success!'});
@@ -33,21 +58,13 @@ contactRouter.route('/contact')
 .put(cors.corsWithOptions,(req,res,next)=>{
     res.statusCode = 403;
     res.end('PUT operation not supported on /dishes');
-})
-.delete(cors.corsWithOptions,authenticate.verifyUser,(req,res,next)=>{
-    Contacts.remove({})
-    .then((resp)=>{
-        res.status.Code=200;
-        res.setHeader('Content-Type','application/json');
-        res.json(resp);
-    },(err)=>next(err))
-    .catch((err)=>next(err));
 });
 
-contactRouter.route('contact/:id_mess')
-.options(cors.corsWithOptions,authenticate.verifyUser, (req,res)=>{ res.sendStatus(200); })
+
+BloodRouter.route('/api/blood/:blood_id')
+.options(cors.corsWithOptions, (req,res)=>{ res.sendStatus(200); })
 .get(cors.cors,(req,res,next)=>{
-    Contacts.findById(req.params.id_mess)
+    Blood.findById(req.params.blood_id)
     .then((cont)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json');
@@ -72,6 +89,4 @@ contactRouter.route('contact/:id_mess')
     },(err)=>next(err))
     .catch((err)=>next(err));
 });
-
-
-module.exports = contactRouter;
+module.exports =BloodRouter;
